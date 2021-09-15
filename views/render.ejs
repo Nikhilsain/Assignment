@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+ 
+  <div class="container">
+      <h1 style="color:green"> welcome to siemens</h>
+  </div>   
+  
+  <script>
+      var result = [];
+      function show(){
+        document.getElementById("add").innerHTML="";
+          for(var i=0;i<result.length;i++)
+          {
+            document.getElementById("add").innerHTML += `<hr  color:"green">${result[i]}
+              <button type="button" style="color:red" onclick="Delete(${i})" >DELETE</button>`;
+          }
+
+      }
+      function myFunction() {
+        result.push(document.getElementById('myTextarea').value);
+        show();
+      
+    }
+      function Delete( i) {
+      result.splice(i, 1);
+      console.log(result);
+      show();
+      console.log(i);
+    }
+  </script>
+      
+</head>
+  <div  style="width:70%">
+
+      <body >          
+        <textarea id="myTextarea">
+          Add a Bug
+        </textarea>
+        <button type="button" onclick="myFunction()">add a bug</button>
+              
+        <h2 id="add"></h2>
+      </body>
+  </div>
+</html>
+    
